@@ -1,4 +1,4 @@
-//.. START typescript lesson - 04. array typing
+//.. START typescript lesson - 05. array typing
 
 type Colors = 'teal' | 'blue' | 'green' | 'black' | 'white';
 type FontSizes = 20 | 24 | 30 | 36;
@@ -12,7 +12,7 @@ type ButtonProps = {
   textColor: Colors;
 };
 
-//.. END typescript lesson - 04. array typing
+//.. END typescript lesson - 05. array typing
 
 const Button = ({
   children,
