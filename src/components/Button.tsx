@@ -9,6 +9,8 @@ type ButtonProps = {
   textColor: 'black' | 'white'; //...union type
 };
 
+//.. END typescript lesson - 03. union types
+
 const Button = ({
   children,
   backgroundColor,
@@ -24,7 +26,5 @@ const Button = ({
     </button>
   );
 };
-
-//.. END typescript lesson - 03. union types
 
 export default Button;
