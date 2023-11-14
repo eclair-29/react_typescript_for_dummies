@@ -1,21 +1,31 @@
-//.. START typescript lesson - 01. variable types
+import { ReactNode } from 'react';
 
-// typescript auto infer variable types
-const str = 'Hello there!';
-// str = 11;
+//.. START typescript lesson - 02. react component typing
 
-// typescript auto infer function args by assigning 'any' by default (and we don't want that)
-const setProductBrand = (brand: string, isNew: boolean): [string, boolean] => {
-  // ...
-  return [brand, isNew];
+// specific to props typing (type or interface...depending to your preference)
+type ButtonProps = {
+  children: ReactNode;
+  backgroundColor: string;
+  fontSize: number;
+  textColor: string;
 };
 
-setProductBrand('Tesla', false);
-
-//.. END typescript lesson - 01. variable types
-
-const Button = () => {
-  return <button className="bg-teal-500 text-white py-4 px-6">Click Me</button>;
+const Button = ({
+  children,
+  backgroundColor,
+  fontSize,
+  textColor,
+}: ButtonProps) => {
+  return (
+    <button
+      style={{ backgroundColor, fontSize, color: textColor }}
+      className="pt-4 pb-3 px-6"
+    >
+      {children}
+    </button>
+  );
 };
+
+//.. END typescript lesson - 02. react component typing
 
 export default Button;
