@@ -5,7 +5,13 @@ function App() {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <Button backgroundColor="teal" fontSize={20} textColor="white">
+      <Button
+        styles={{
+          backgroundColor: 'teal',
+          color: '#fff',
+          fontSize: 20,
+        }}
+      >
         {textStrings}
       </Button>
     </div>
