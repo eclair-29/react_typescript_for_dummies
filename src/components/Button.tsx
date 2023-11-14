@@ -1,19 +1,18 @@
-import { ReactNode } from 'react';
-
-//.. START typescript lesson - 03. union types
+//.. START typescript lesson - 04. array typing
 
 type Colors = 'teal' | 'blue' | 'green' | 'black' | 'white';
 type FontSizes = 20 | 24 | 30 | 36;
 
 type ButtonProps = {
-  children: ReactNode;
-  backgroundColor: Colors; //...union type
-  fontSize: FontSizes; //...union type
+  children: string[]; // ...unli define strings
+  // children: [string, string, string]; // ...tuple (length specific)
+  backgroundColor: Colors;
+  fontSize: FontSizes;
   heading?: FontSizes;
-  textColor: Colors; //...union type
+  textColor: Colors;
 };
 
-//.. END typescript lesson - 03. union types
+//.. END typescript lesson - 04. array typing
 
 const Button = ({
   children,
@@ -26,7 +25,7 @@ const Button = ({
       style={{ backgroundColor, fontSize, color: textColor }}
       className="pt-4 pb-3 px-6"
     >
-      {children}
+      {children.map((text) => text)}
     </button>
   );
 };
