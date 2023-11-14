@@ -1,13 +1,12 @@
 import { ReactNode } from 'react';
 
-//.. START typescript lesson - 02. react component typing
+//.. START typescript lesson - 03. union types
 
-// specific to props typing (type or interface...depending to your preference)
 type ButtonProps = {
   children: ReactNode;
-  backgroundColor: string;
-  fontSize: number;
-  textColor: string;
+  backgroundColor: 'teal' | 'blue' | 'green'; //...union type
+  fontSize: 20 | 24; //...union type
+  textColor: 'black' | 'white'; //...union type
 };
 
 const Button = ({
@@ -26,6 +25,6 @@ const Button = ({
   );
 };
 
-//.. END typescript lesson - 02. react component typing
+//.. END typescript lesson - 03. union types
 
 export default Button;
