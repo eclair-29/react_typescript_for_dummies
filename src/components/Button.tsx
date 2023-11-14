@@ -2,11 +2,15 @@ import { ReactNode } from 'react';
 
 //.. START typescript lesson - 03. union types
 
+type Colors = 'teal' | 'blue' | 'green' | 'black' | 'white';
+type FontSizes = 20 | 24 | 30 | 36;
+
 type ButtonProps = {
   children: ReactNode;
-  backgroundColor: 'teal' | 'blue' | 'green'; //...union type
-  fontSize: 20 | 24; //...union type
-  textColor: 'black' | 'white'; //...union type
+  backgroundColor: Colors; //...union type
+  fontSize: FontSizes; //...union type
+  heading?: FontSizes;
+  textColor: Colors; //...union type
 };
 
 //.. END typescript lesson - 03. union types
