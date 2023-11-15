@@ -1,45 +1,16 @@
-import { useState } from 'react';
+//.. START typescript lesson - 11. as const
 
-type FontSizes = 20 | 24 | 30 | 36;
+const buttonTextOptions = ['Click Me ', 'Button Here ', 'Hello!'] as const;
+// as const - readonly, and you can't push or add newer entries on the array
 
-type ButtonProps = {
-  children: string[];
-  // children: [string, string, string]; // ...tuple (length specific)
-  heading?: FontSizes;
-  styles: React.CSSProperties;
-  onBtnClick?: (response: string) => string; // | void
-  defaultValue: string;
-  btnId?: number;
-};
-
-//.. START typescript lesson - 10. useState typing
-
-type Students = {
-  name: string;
-  gradeLevel: number;
-  section: string;
-  gradeMarks: string[];
-  // ...
-};
-
-const Button = ({ children, styles, ...rest }: ButtonProps) => {
-  const [students, setStudents] = useState<Students[] | null>(null);
-
-  const getStudents = () => students;
-  // const studentSection = students && students[0]?.section;
-
+const Button = () => {
   return (
-    <button
-      onClick={() => getStudents}
-      style={styles}
-      {...rest}
-      className="pt-4 pb-3 px-6"
-    >
-      {children.map((text) => text)}
+    <button className="pt-4 pb-3 px-6">
+      {buttonTextOptions.map((option) => option)}
     </button>
   );
 };
 
-//.. END typescript lesson - 10. useState typing
+//.. END typescript lesson - 11. as const
 
 export default Button;
