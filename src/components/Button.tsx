@@ -1,6 +1,6 @@
-//.. START typescript lesson - 08. function typing
-
 type FontSizes = 20 | 24 | 30 | 36;
+
+//.. START typescript lesson - 09. rest and spread
 
 type ButtonProps = {
   children: string[];
@@ -8,13 +8,16 @@ type ButtonProps = {
   heading?: FontSizes;
   styles: React.CSSProperties;
   onBtnClick: (response: string) => string; // | void
+  defaultValue?: string;
+  btnId?: number;
 };
 
-const Button = ({ children, styles, onBtnClick }: ButtonProps) => {
+const Button = ({ children, styles, onBtnClick, ...rest }: ButtonProps) => {
   return (
     <button
       onClick={() => onBtnClick('hi!')}
       style={styles}
+      {...rest}
       className="pt-4 pb-3 px-6"
     >
       {children.map((text) => text)}
@@ -22,6 +25,6 @@ const Button = ({ children, styles, onBtnClick }: ButtonProps) => {
   );
 };
 
-//.. END typescript lesson - 08. function typing
+//.. END typescript lesson - 09. rest and spread
 
 export default Button;

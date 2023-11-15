@@ -28,6 +28,8 @@ function App() {
           color: '#000',
           fontSize: 20,
         }}
+        defaultValue="test"
+        btnId={1}
       >
         {textStrings}
       </Button>
