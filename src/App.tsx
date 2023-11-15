@@ -15,10 +15,13 @@ function App() {
     },
   };
 
+  const handleBtnClick = (response: string) => response;
+
   return (
     <div className="flex justify-center items-center h-screen flex-col">
       <List grades={student.grades} />
       <Button
+        onBtnClick={handleBtnClick}
         styles={{
           borderWidth: 2,
           borderColor: '#000',
