@@ -1,16 +1,18 @@
-//.. START typescript lesson - 11. as const
+import { useEffect } from "react";
 
-const buttonTextOptions = ['Click Me ', 'Button Here ', 'Hello!'] as const;
-// as const - readonly, and you can't push or add newer entries on the array
+//.. START typescript lesson - 12. as type assertion
+
+type ButtonColor = 'red' | 'blue' | 'green';
 
 const Button = () => {
-  return (
-    <button className="pt-4 pb-3 px-6">
-      {buttonTextOptions.map((option) => option)}
-    </button>
-  );
+  useEffect(() => {
+    const previousBtnColor = localStorage.getItem('buttonColor') as ButtonColor;
+    // override the string | null ts inference to ButtonColor type
+  }), []);
+
+  return <button className="pt-4 pb-3 px-6">Click</button>;
 };
 
-//.. END typescript lesson - 11. as const
+//.. END typescript lesson - 12. as type assertion
 
 export default Button;
